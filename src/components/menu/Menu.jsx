@@ -19,6 +19,7 @@ const Menu = () => {
   ];
 
   const toggleMenu = () => {
+    document.querySelector(".hamburger-icon").classList.toggle("active");
     setIsMenuOpen(!isMenuOpen);
   };
 
@@ -41,7 +42,7 @@ const Menu = () => {
   return (
     <div className="menu-container" ref={menuContainer}>
       <div className="menu-toggle">
-        <button onClick={() => setIsMenuOpen(!isMenuOpen)}>Menu</button>
+        <button class="hamburger-icon" onClick={toggleMenu}></button>
       </div>
       <div className="menu">
         <div className="menu-links">
