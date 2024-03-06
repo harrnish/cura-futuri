@@ -1,0 +1,16 @@
+.menu {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 2em;
+}
+
+.menu-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
