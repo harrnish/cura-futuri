@@ -1,4 +1,4 @@
-/* transition animation */
+/* page transition animation */
 .slide-in {
   position: fixed;
   top: 0;
@@ -8,6 +8,7 @@
   background: #0f0f0f;
   transform-origin: bottom;
   pointer-events: none;
+  z-index: 2;
 }
 
 .slide-out {
@@ -19,4 +20,5 @@
   background: #0f0f0f;
   transform-origin: top;
   pointer-events: none;
+  z-index: 2;
 }
