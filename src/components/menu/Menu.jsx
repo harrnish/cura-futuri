@@ -20,6 +20,8 @@ const Menu = () => {
   const menuContainer = useRef();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuAnimation = useRef();
+  const menuLinksAnimation = useRef();
+  const menuCopyAnimation = useRef();
   const hamburgerBefore = CSSRulePlugin.getRule(".hamburger-icon:before");
   const hamburgerAfter = CSSRulePlugin.getRule(".hamburger-icon:after");
 
@@ -29,16 +31,44 @@ const Menu = () => {
   };
 
   useEffect(() => {
+    gsap.set(".menu-link-item-holder", { y: 75 });
+    gsap.set(".menu-sub-col-links, .menu-sub-col-address, .menu-col-copy", {
+      y: 30,
+      opacity: 0,
+    });
+
     menuAnimation.current = gsap.timeline({ paused: true }).to(".menu", {
       duration: 1,
       clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
       ease: "power4.inOut",
     });
+
+    menuLinksAnimation.current = gsap
+      .timeline({ paused: true })
+      .to(".menu-link-item-holder", {
+        y: 0,
+        duration: 1.25,
+        stagger: 0.05,
+        ease: "power2.inOut",
+        delay: -0.25,
+      });
+
+    menuCopyAnimation.current = gsap
+      .timeline({ paused: true })
+      .to(".menu-sub-col-links, .menu-sub-col-address, .menu-col-copy", {
+        y: 0,
+        opacity: 1,
+        stagger: 0.1,
+        duration: 1,
+        ease: "power2.inOut",
+      });
   }, []);
 
   useEffect(() => {
     if (isMenuOpen) {
       menuAnimation.current.play();
+      menuLinksAnimation.current.play();
+      menuCopyAnimation.current.play();
       gsap.to(".menu-bar a", {
         color: "#f3f1e5",
       });
@@ -52,6 +82,8 @@ const Menu = () => {
       });
     } else {
       menuAnimation.current.reverse();
+      menuLinksAnimation.current.reverse();
+      menuCopyAnimation.current.reverse();
       gsap.to(".menu-bar a", {
         color: "#000",
         duration: 0.5,
@@ -99,9 +131,11 @@ const Menu = () => {
                   className="menu-link-item"
                   onClick={toggleMenu}
                 >
-                  <Link className="menu-link" to={link.path}>
-                    {link.label}
-                  </Link>
+                  <div className="menu-link-item-holder">
+                    <Link className="menu-link" to={link.path}>
+                      {link.label}
+                    </Link>
+                  </div>
                 </div>
               ))}
             </div>
