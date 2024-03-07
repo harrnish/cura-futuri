@@ -1,10 +1,14 @@
 import React from "react";
-import Transition from "../../Transition";
+import Transition from "../../components/transition/Transition";
 
 import "./works.css";
 
 const Works = () => {
-  return <div>Works</div>;
+  return (
+    <div className="container">
+      <h1>Works</h1>
+    </div>
+  );
 };
 
 export default Transition(Works);

@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import "./transition.css";
+
 const Transition = (OgPage) => {
   return function WithTransition(props) {
     return (
