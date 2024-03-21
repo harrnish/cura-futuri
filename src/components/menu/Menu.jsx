@@ -38,6 +38,45 @@ const Menu = () => {
   };
 
   useEffect(() => {
+    gsap.set(".menu-link-item-holder", { y: 75 });
+
+    menuAnimation.current = gsap.timeline({ paused: true }).to(".menu", {
+      duration: 1,
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      ease: "power4.inOut",
+    });
+
+    menuLinksAnimation.current = gsap
+      .timeline({ paused: true })
+      .to(".menu-link-item-holder", {
+        y: 0,
+        duration: 1.25,
+        stagger: 0.075,
+        ease: "power2.inOut",
+        delay: -0.25,
+      });
+
+    revealHoveredLinkImg.current = gsap
+      .timeline({ paused: true })
+      .to(".bind-new-img", {
+        top: "0%",
+        duration: 1,
+        ease: "power.out",
+      });
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      menuAnimation.current.play();
+      menuLinksAnimation.current.play();
+    } else {
+      menuAnimation.current.reverse();
+      menuLinksAnimation.current.reverse();
+    }
+  }, [isMenuOpen]);
+
+  // handle link hover animation
+  useEffect(() => {
     const previewContainer = document.querySelector(".link-preview-img");
     const menuLinkItems = document.querySelectorAll(".menu-link-item");
     const linkImages = [
@@ -98,52 +137,21 @@ const Menu = () => {
     };
   }, []);
 
-  useEffect(() => {
-    gsap.set(".menu-link-item-holder", { y: 75 });
-
-    menuAnimation.current = gsap.timeline({ paused: true }).to(".menu", {
-      duration: 1,
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      ease: "power4.inOut",
-    });
-
-    menuLinksAnimation.current = gsap
-      .timeline({ paused: true })
-      .to(".menu-link-item-holder", {
-        y: 0,
-        duration: 1.25,
-        stagger: 0.05,
-        ease: "power2.inOut",
-        delay: -0.25,
-      });
-
-    revealHoveredLinkImg.current = gsap
-      .timeline({ paused: true })
-      .to(".bind-new-img", {
-        top: "0%",
-        duration: 1,
-        ease: "power.out",
-      });
-  }, []);
-
-  useEffect(() => {
-    if (isMenuOpen) {
-      menuAnimation.current.play();
-      menuLinksAnimation.current.play();
-    } else {
-      menuAnimation.current.reverse();
-      menuLinksAnimation.current.reverse();
-    }
-  }, [isMenuOpen]);
-
   return (
     <div className="menu-container" ref={menuContainer}>
       <div className="menu-bar">
         <div className="menu-logo" onClick={closeMenu}>
           <Link to="/">Darren</Link>
         </div>
-        <div className="menu-toggle">
-          <button className="hamburger-icon" onClick={toggleMenu}></button>
+        <div className="menu-actions">
+          <div className="contact-btn">
+            <div className="btn">
+              <a href="#">Buy Now</a>
+            </div>
+          </div>
+          <div className="menu-toggle">
+            <button className="hamburger-icon" onClick={toggleMenu}></button>
+          </div>
         </div>
       </div>
       <div className="menu">

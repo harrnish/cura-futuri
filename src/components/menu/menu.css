@@ -14,6 +14,7 @@
   top: 0;
   width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 1.75em;
   z-index: 1;
@@ -27,8 +28,13 @@
   letter-spacing: -0.02em;
 }
 
+.menu-actions {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
 .menu-toggle {
-  flex: 1;
   width: 60px;
   height: 60px;
   display: flex;
@@ -114,7 +120,7 @@
 .menu-col .menu-sub-col {
   display: flex;
   align-items: center;
-  border: 1px solid var(--color-bg-lighter);
+  /* border: 1px solid var(--color-bg-lighter); */
 }
 
 /* main links */
@@ -132,15 +138,17 @@
   position: relative;
   color: #fff;
   font-family: "PP Editorial Old";
-  font-size: 80px;
+  font-size: 100px;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: -0.01em;
   line-height: 100%;
 }
 
+/* link hover preview */
 .link-preview-img {
   position: absolute;
+  left: 50%;
   width: 400px;
   height: 500px;
   transform: rotate(10deg);
@@ -157,9 +165,6 @@
 }
 
 @media (max-width: 900px) {
-  .menu-bar {
-    padding: 0.5em 0.75em 0.5em 1.5em;
-  }
   .menu-toggle {
     justify-content: flex-end;
   }
@@ -167,5 +172,13 @@
   .menu-col {
     width: 100%;
     flex-direction: column;
+  }
+
+  .menu-link-item .menu-link-item-holder a {
+    font-size: 60px;
+  }
+
+  .link-preview-img {
+    display: none;
   }
 }

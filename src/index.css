@@ -69,3 +69,16 @@ img {
   width: 100%;
   padding: 2em;
 }
+
+.btn {
+  background: var(--color-bg-lighter);
+  padding: 0.75em 1.5em 0.8em 1.5em;
+  border-radius: 2em;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.btn a {
+  font-size: 12px;
+  line-height: 100%;
+}

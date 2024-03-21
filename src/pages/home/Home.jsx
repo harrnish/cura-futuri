@@ -6,11 +6,7 @@ import "./home.css";
 const Home = () => {
   return (
     <div className="container">
-      <section className="hero-section">
-        <div className="hero-copy">
-          <h2>Rethinking...</h2>
-        </div>
-      </section>
+      <section className="hero-section"></section>
     </div>
   );
 };
