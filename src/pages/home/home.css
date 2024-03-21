@@ -28,6 +28,23 @@
   font-size: 160px;
 }
 
+section.home-about {
+  position: relative;
+  margin: 10em 0;
+  width: 75%;
+}
+
+.home-about h2 {
+  text-indent: 4em;
+  margin-bottom: 1em;
+}
+
+.home-about p {
+  width: 30%;
+  margin: 0 auto;
+  padding-bottom: 1em;
+}
+
 @media (max-width: 900px) {
   .hero-copy {
     width: 100%;
@@ -35,5 +52,13 @@
 
   .hero-header h1 {
     font-size: 50px;
+  }
+
+  section.home-about {
+    width: 100%;
+  }
+
+  .home-about p {
+    width: 100%;
   }
 }

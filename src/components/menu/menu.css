@@ -15,31 +15,16 @@
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 0.5em 2em;
+  padding: 1.75em;
   z-index: 1;
   pointer-events: all;
 }
 
-.menu-bar > div {
-  flex: 1;
-}
-
 .menu-logo a {
+  font-family: "PP Monument Extended";
   font-weight: 600;
-}
-
-.menu-bar a {
-  text-decoration: none;
-  color: #000;
-}
-
-.menu-contact {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.menu-contact a {
-  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 .menu-toggle {
@@ -47,7 +32,7 @@
   width: 60px;
   height: 60px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -57,23 +42,27 @@
   justify-content: center;
   align-items: center;
   outline: none;
-  height: 60px;
-  width: 60px;
+  height: 70px;
+  width: 70px;
   border: 0px;
+  border-radius: 100%;
   padding: 0;
   background: transparent;
-  transition: all 300ms ease-in-out;
-  transition-delay: 150ms;
+  transition: all 300ms;
   cursor: pointer;
+}
+
+.hamburger-icon:hover {
+  background: var(--color-bg-lighter);
 }
 
 .hamburger-icon:before,
 .hamburger-icon:after {
   content: "";
   position: absolute;
-  width: 30px;
+  width: 24px;
   height: 1.5px;
-  background: #000;
+  background: #fff;
   transition: all 300ms ease-in-out;
   transition-delay: 150ms;
   will-change: transform;
@@ -102,58 +91,36 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #000;
+  background: var(--color-bg-light);
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   display: flex;
+  justify-content: center;
+  align-items: center;
   pointer-events: all;
 }
 
 .menu-col {
-  flex: 1;
+  width: 75%;
   height: 100%;
   padding: 2em;
-}
-
-/* menu-col left */
-.menu-col:nth-child(1) {
-  position: relative;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  color: var(--color-bg);
+  gap: 1em;
 }
 
-.menu-col:nth-child(1) .menu-col-copy {
-  width: 35%;
-}
-
-.menu-col:nth-child(1) .menu-col-copy p {
-  opacity: 0.5;
-}
-
-/* menu-col right */
-.menu-col:nth-child(2) {
-  display: flex;
-  gap: 2em;
-}
-
-.menu-col:nth-child(2) .menu-sub-col:nth-child(2) {
-  position: relative;
-  top: 0.5em;
-}
-
-.menu-col:nth-child(2) > div {
+.menu-col > div {
   flex: 1;
 }
 
-.menu-col:nth-child(2) .menu-sub-col {
-  margin-top: 25%;
+.menu-col .menu-sub-col {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-bg-lighter);
 }
 
 /* menu-col right => main links */
 .menu-link-item {
   position: relative;
-  margin: 0.25em 0;
+  margin: 0.125em 0;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
@@ -163,26 +130,30 @@
 
 .menu-link-item .menu-link-item-holder a {
   position: relative;
-  color: var(--color-bg);
-  font-size: 50px;
-  font-weight: 500;
+  color: #fff;
+  font-family: "PP Editorial Old";
+  font-size: 80px;
+  font-weight: 300;
+  text-transform: uppercase;
   letter-spacing: -0.01em;
+  line-height: 100%;
 }
 
 /* menu-col right => socials + address copy */
-.menu-col:nth-child(2) .menu-sub-col:nth-child(2) {
+.menu-col .menu-sub-col:nth-child(2) {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   gap: 8em;
   color: var(--color-bg);
 }
 
-.menu-col:nth-child(2) .menu-sub-col:nth-child(2) p:nth-child(1) {
+.menu-col .menu-sub-col:nth-child(2) p:nth-child(1) {
   text-transform: uppercase;
   font-size: 13px;
   font-weight: 500;
   margin-bottom: 0.5em;
-  opacity: 0.5;
 }
 
 .menu-sub-col-links {
@@ -196,11 +167,11 @@
 }
 
 .menu-sub-col-links a {
-  color: var(--color-bg);
+  color: #fff;
   padding: 0.125em 0;
 }
 
-.menu-col:nth-child(2) .menu-sub-col:nth-child(2) p {
+.menu-col .menu-sub-col:nth-child(2) p {
   margin-bottom: 0.25em;
 }
 
@@ -212,21 +183,12 @@
     justify-content: flex-end;
   }
 
-  .menu-contact {
-    display: none;
-  }
-
-  .menu-col:nth-child(1) {
-    display: none;
-  }
-
-  .menu-col:nth-child(2) {
+  .menu-col {
+    width: 100%;
     flex-direction: column;
   }
 
-  .menu-col:nth-child(2) .menu-sub-col:nth-child(2) {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 0;
+  .menu-col .menu-sub-col:nth-child(2) {
+    display: none;
   }
 }

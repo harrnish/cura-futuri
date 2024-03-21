@@ -1,14 +1,14 @@
 import React from "react";
 import Transition from "../../components/transition/Transition";
 
-import "./services.css";
+import "./blog.css";
 
-const Services = () => {
+const Blog = () => {
   return (
     <div className="container">
-      <h1>Services</h1>
+      <h1>Blog</h1>
     </div>
   );
 };
 
-export default Transition(Services);
+export default Transition(Blog);
