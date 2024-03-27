@@ -1,47 +1,15 @@
 @font-face {
-  font-family: "Saans TRIAL";
-  src: url("/src/assets/fonts/SaansTRIAL-Light.otf") format("opentype");
+  font-family: "Rosseta";
+  src: url("/src/assets/fonts/Rosseta.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Saans TRIAL";
-  src: url("/src/assets/fonts/SaansTRIAL-Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Saans TRIAL";
-  src: url("/src/assets/fonts/SaansTRIAL-Medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Saans TRIAL";
-  src: url("/src/assets/fonts/SaansTRIAL-SemiBold.otf") format("opentype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Saans TRIAL";
-  src: url("/src/assets/fonts/SaansTRIAL-Bold.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Saans TRIAL";
-  src: url("/src/assets/fonts/SaansTRIAL-Heavy.otf") format("opentype");
-  font-weight: 800;
+  font-family: "Wremena";
+  src: url("/src/assets/fonts/Wremena_Light.otf") format("opentype");
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
