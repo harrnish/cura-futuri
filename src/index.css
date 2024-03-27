@@ -3,7 +3,7 @@
   --color-bg-light: #131317;
   --color-bg-lighter: #2e2e34;
   --color-text-primary: #fff;
-  --color-text-secondary: #585861;
+  --color-text-secondary: #4a4a51;
   --color-accent: #011eff;
 }
 
@@ -27,6 +27,7 @@ h1 {
   font-weight: 500;
   color: #fff;
   font-family: "Rosseta";
+  line-height: 100%;
 }
 
 h2 {
@@ -37,10 +38,11 @@ h2 {
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 36px;
   font-weight: 500;
   letter-spacing: -0.01em;
   margin-bottom: 0.25em;
+  line-height: 125%;
   color: #fff;
 }
 
@@ -50,6 +52,7 @@ a {
   font-weight: 400;
   text-decoration: none;
   color: #fff;
+  line-height: 150%;
 }
 
 span {
@@ -68,18 +71,54 @@ img {
 
 .container {
   width: 100%;
+  margin: 0 auto;
   padding: 2em;
 }
 
 .btn {
   background: var(--color-bg-lighter);
-  padding: 0.75em 1.5em 0.8em 1.5em;
+  padding: 1em 1.5em 0.95em 1.5em;
   border-radius: 2em;
   text-transform: uppercase;
   transition: 0.3s;
 }
 
 .btn a {
+  font-family: "Inter";
   font-size: 12px;
   line-height: 100%;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 1em 0;
+  color: var(--color-text-primary);
+  font-family: "Wremena";
+  font-size: 1.25em;
+  border: none;
+  outline: none;
+  background: none;
+  border-bottom: 1px solid var(--color-text-secondary);
+}
+
+::placeholder {
+  font-family: "Wremena";
+}
+
+.input {
+  margin-bottom: 1em;
+  display: flex;
+}
+
+.input button {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-text-secondary);
+  padding: 0 1em;
+  text-transform: uppercase;
+  font-size: 0.75;
+  font-weight: 500;
 }

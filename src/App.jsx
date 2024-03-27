@@ -3,6 +3,7 @@ import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import Menu from "./components/menu/Menu";
+import Footer from "./components/footer/Footer";
 
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
@@ -27,6 +28,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </AnimatePresence>
+      <Footer />
     </>
   );
 }

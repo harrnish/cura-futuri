@@ -53,7 +53,7 @@ const Menu = () => {
         duration: 1.25,
         stagger: 0.075,
         ease: "power2.inOut",
-        delay: -0.25,
+        delay: -0.05,
       });
 
     revealHoveredLinkImg.current = gsap

@@ -23,6 +23,7 @@
 
 .menu-logo a {
   font-family: "PP Monument Extended";
+  font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: -0.02em;
@@ -125,8 +126,9 @@
 /* main links */
 .menu-link-item {
   position: relative;
-  margin: 0.1em 0;
+  padding: 1em 0 0.125em 0;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  /* border: 1px solid red; */
 }
 
 .menu-link-item .menu-link-item-holder {
@@ -141,7 +143,7 @@
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: -0.01em;
-  line-height: 100%;
+  line-height: 80%;
 }
 
 /* link hover preview */
