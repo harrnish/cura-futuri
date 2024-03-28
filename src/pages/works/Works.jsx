@@ -194,7 +194,12 @@ const Works = () => {
           </div>
         </section>
 
-        <div className="works-marquee">
+        <div
+          className="works-marquee"
+          onMouseOver={() => {
+            handleResetPreivew();
+          }}
+        >
           <Marquee>
             <h1>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae,
@@ -203,7 +208,14 @@ const Works = () => {
           </Marquee>
         </div>
 
-        <MagneticButton />
+        <div
+          className="magnetic-btn"
+          onMouseOver={() => {
+            handleResetPreivew();
+          }}
+        >
+          <MagneticButton />
+        </div>
       </div>
     </div>
   );
